@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contact %}
+text-warning
+{% endblock %}
+
+{% block title %}
+Contact Us
+{% endblock %}
+
+{% block hero%}
+<div class="hero fw-semibold text-light text-center pb-3">
+
+    <div class="row pt-3 text-start text-dark border border-2 border-light rounded-5 mt-3">
+        <div class="col-sm-12 col-md-12 col-lg-6  fw-semibold text-light ps-2 text-center contact-image">
+            <!-- <p>CONTACT <br> US -</p> -->
+            <img src="{% static 'img/add-image.png' %}" alt="" class="w-75">
+
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6  fw-semibold text-light  fs-6 pt-3">
+            <!-- messages start -->
+            {% if messages %}
+            {% for m in messages %}
+            <div class="alert alert-success alert-dismissible fade show position-absolute"
+                role="alert">
+                {{m}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                    aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <!-- messages end -->
+
+            <!-- contact form start -->
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" class="form-control mb-2 " required>
+                <label for="number">Contact Number</label>
+                <input type="tel" name="contactno" id="number" class="form-control mb-2" required>
+                <label for="mail">Email</label>
+                <input type="email" name="email" id="mail" class="form-control mb-2" required>
+                <label for="Subject">Subject</label>
+                <input type="text" name="subject" id="Subject" class="form-control mb-2" required>
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="3" class="form-control mb-3"
+                    required></textarea>
+                <button type="submit"
+                    class="btn button-color fw-semibold text-light w-100 mb-2 text-center">Submit
+                    Enquiry</button>
+            </form>
+            <!-- contact form end -->
+        </div>
+    </div>
+    <div class="icon">
+        <!-- Facebook -->
+        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                class="fab fa-facebook-f text-light fs-2"></i></a>
+
+        <!-- Twitter -->
+        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                class="fab fa-twitter text-light fs-2"></i></a>
+
+        <!-- Google -->
+        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                class="fab fa-google text-light fs-2"></i></a>
+
+        <!-- Instagram -->
+        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                class="fab fa-instagram text-light fs-2"></i></a>
+
+        <!-- Linkedin -->
+        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                class="fab fa-linkedin-in text-light fs-2"></i></a>
+
+        <!-- Github -->
+        <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                class="fab fa-github text-light fs-2"></i></a>
+    </div>
+</div>
+{% endblock %}
+{% block main %}
+<div class="row ">
+    <div class="col-sm-12 contact">
+
+    </div>
+</div>
+<hr class="my-0">
+<!-- map start -->
+<div class="row  bgcc py-3">
+    <div class="col-sm-10 mx-auto rounded-3 border p-2">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d113876.79168116671!2d80.9238528!3d26.882867199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1753308778944!5m2!1sen!2sin"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+<!-- map end -->
+<hr class="my-0">
+{% endblock %}

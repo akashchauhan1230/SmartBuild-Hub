@@ -1,0 +1,37 @@
+{% extends 'adminbase.html'%}
+
+{% block admin %}
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Manage Contractors</h2>
+        <table class="table table-stripped">
+            <tr>
+                <th>Sr. No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Contact No</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+            {% for c,l in combined %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{c.name}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.password}}</td>
+                <td>{{c.contact_no}}</td>
+                <td>{{c.address}}</td>
+                <td>
+                    {% if l.status == 'active' %}
+                    <a href="{% url 'block' id=l.id %}" class="btn btn-danger">Block</a>
+                    {% else %}
+                    <a href="{% url 'unblock' id=l.id %}" class="btn btn-success">Unblock</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}8

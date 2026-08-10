@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+x
+{% block hero%}
+<div class="hero fw-semibold text-light text-center pb-3">
+
+    <div class="row pt-3 text-start text-dark blurs">
+        <div class="col-sm-6 order-2">
+            <div class="mx-auto ms-5">
+
+                <img src="{% static 'img/DP.png' %}" alt="" class="rounded-circle w-75 mt-5">
+            </div>
+        </div>
+        <div class="col-sm-6 pb-5 text-light order-1 mt-5">
+            <h2 class="txt-color fw-semibold">AKASH CHAUHAN</h2>
+            <h4>Passionate Web Developer</h4>
+            <h6>Currently I'm pursuing Bachelor of Technology in Computer Science stream from
+                Rameshwaram Institute of Technology, Lucknow 227202 .</h6>
+            <h6 class="txt-color">"Most good programmers do programming not because they expect to
+                get paid or get adulation by the public, but because it is fun to program."</h6>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block main %}
+<div class="row ">
+    <div class="col-sm-12 contact">
+
+    </div>
+</div>
+
+{% endblock %}

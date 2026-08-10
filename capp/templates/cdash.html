@@ -1,0 +1,52 @@
+{% extends 'cbase.html' %}
+{% load static %}
+
+{% block contractor %}
+<div class="row">
+    <h1>Contracotr Dashboard</h1>
+     <div class="col-sm-6 col-md-6 col-lg-3 px-3">
+        <div
+            class="mycard shadow-lg border-bottom border-3 border-warning p-3 w-75 text-center rounded-3">
+            <h2 class="text-warning ">{{project}}</h2>
+            <h5>Total Project</h5>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-3 px-3">
+        <div
+            class="mycard shadow-lg border-bottom w-75 text-center border-3 border-warning p-3 text-center rounded-3">
+            <h2 class="text-warning">{{cproject}}</h2>
+            <h5>Projct completed</h5>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-3 px-3">
+        <div
+            class="mycard shadow-lg border-bottom w-75 text-center border-3 border-warning p-3 text-center rounded-3">
+            <h2 class="text-warning">{{aproject}}</h2>
+            <h5>Project ongoing</h5>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm-12 p-3 border rounded-3 border-warning shadow-lg mt-3 col-md-6">
+
+        <h2>Application's Details</h2>
+        <div class="mycard m-2 p-3 shadow-lg rounded-3">
+            <h2>{{applications}}</h2>
+            <h5 class="text-warning">Total Application</h5>
+        </div>
+        <div class="mycard shadow-lg  m-2  p-3 rounded-3">
+            <h2>{{aa}}</h2>
+            <h5 class="text-warning"> Approved Application </h5>
+        </div>
+        <div class="mycard shadow-lg  m-2  p-3 rounded-3">
+            <h2>{{pa}}</h2>
+            <h5 class="text-warning">Pending Application</h5>
+        </div>
+        <div class="mycard shadow-lg  m-2  p-3 rounded-3">
+            <h2>{{ra}}</h2>
+            <h5 class="text-warning">Rejected Application</h5>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

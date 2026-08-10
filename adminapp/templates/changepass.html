@@ -1,0 +1,32 @@
+{% extends 'adminbase.html'%}
+
+{% block admin %}
+<div class="row h-100">
+   <div class="col-sm-5 mx-auto mt-5 ">
+                <div class="card  p-3 text-center rounded-3 border border-warning" >
+                    <i class="fa-solid fa-key fa-4x mx-auto my-3 "></i>
+                    <h4 class="fw-semibold">Change Password</h4>
+                    <form method="post" class="mt-4">
+                        {% csrf_token%}
+                        <div class="form-floating mb-3 ">
+                            <input type="text" class="form-control" id="floatingInput"
+                                placeholder="Enter username" name="oldpwd" required>
+                            <label for="floatingInput">Enter Old Password</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control mb-3" id="floatingPassword"
+                                placeholder="Password" name="newpwd" required>
+                            <label for="floatingPassword">New Password</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="floatingPassword"
+                                placeholder="Password" name="cnfpwd" required>
+                            <label for="floatingPassword">Confirm Password</label>
+                        </div>
+                        <button type="submit" class="btn btn-warning mt-4 w-50 fw-semibold">Change</button>
+                    </form>
+        
+                </div>
+            </div>
+</div>
+{% endblock %}

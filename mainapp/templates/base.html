@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    <div class="container-fluid position-relative">
+        <div class="row ">
+            <div class="col-sm-12 col-md-11 col-lg-11 mx-auto p-0  rounded-5  shadow-lg my-3">
+                <!-- navbar start -->
+                 <nav class="navbar navbar-expand-lg  bgc rounded-top-5" id="nav">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="{% url 'index' %}"><img
+                                src="{% static 'img/smartbuild_Logo_dark.png' %}" alt=""
+                                height="60px"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class=" collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link mx-3 fw-semibold {% block home %}{% endblock %}"
+                                        aria-current="
+                                        page" href="{% url 'index' %}">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mx-3 fw-semibold {% block services %}{% endblock %}"
+                                        href="{% url 'services' %}">SERVICES</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mx-3 fw-semibold {% block project %}{% endblock %}"
+                                        href="{% url 'project' %}">PROJECTS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mx-3 fw-semibold {% block about %}{% endblock %}"
+                                        href=" {% url 'about' %}">ABOUT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mx-3 fw-semibold {% block contact %}{% endblock %}"
+                                        href=" {% url 'contact' %}">CONTACT US</a>
+                                </li>
+                            </ul>
+                            <div class="d-flex">
+                                <a href="{% url 'login' %}" class="btn button-color text-light fw-semibold">SIGN
+                                    IN</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- navbar end -->
+                <hr class="my-0">
+                {% block hero %}
+                
+                {% endblock %}
+            </div>
+        </div>
+        {% block main %}
+
+        {% endblock %}
+        <!-- Footer -->
+        <div class="row">
+            <div class="col-sm-12 p-0">
+                <footer class="bgcc text-center">
+                    <!-- Grid container -->
+                    <div class="container p-4">
+                        <!-- Section: Social media -->
+                        <section class="mb-4">
+                            <!-- Facebook -->
+                            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                                href="#!" role="button"><i
+                                    class="fab fa-facebook-f text-light"></i></a>
+
+                            <!-- Twitter -->
+                            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                                href="#!" role="button"><i
+                                    class="fab fa-twitter text-light"></i></a>
+
+                            <!-- Google -->
+                            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                                href="#!" role="button"><i class="fab fa-google text-light"></i></a>
+
+                            <!-- Instagram -->
+                            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                                href="#!" role="button"><i
+                                    class="fab fa-instagram text-light"></i></a>
+
+                            <!-- Linkedin -->
+                            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                                href="#!" role="button"><i
+                                    class="fab fa-linkedin-in text-light"></i></a>
+
+                            <!-- Github -->
+                            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1"
+                                href="#!" role="button"><i class="fab fa-github text-light"></i></a>
+                        </section>
+                        <!-- Section: Social media -->
+
+                        <!-- Section: Form -->
+                        <section class="">
+                            <form action="">
+                                <!--Grid row-->
+                                <div class="row d-flex justify-content-center">
+                                    <!--Grid column-->
+                                    <div class="col-auto">
+                                        <p class="pt-2">
+                                            <strong>Sign up for our newsletter</strong>
+                                        </p>
+                                    </div>
+                                    <!--Grid column-->
+
+                                    <!--Grid column-->
+                                    <div class="col-md-5 col-12">
+                                        <!-- Email input -->
+                                        <div data-mdb-input-init class="form-outline mb-4">
+                                            <input type="email" id="form5Example24"
+                                                class="form-control" />
+                                            <label class="form-label" for="form5Example24">Email
+                                                address</label>
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+
+                                    <!--Grid column-->
+                                    <div class="col-auto">
+                                        <!-- Submit button -->
+                                        <button data-mdb-ripple-init type="submit"
+                                            class="btn btn-outline mb-4">
+                                            Subscribe
+                                        </button>
+                                    </div>
+                                    <!--Grid column-->
+                                </div>
+                                <!--Grid row-->
+                            </form>
+                        </section>
+                        <!-- Section: Form -->
+
+                        <!-- Section: Text -->
+                        <section class="mb-4">
+                            <p>
+                                An innovative digital platform transforming traditional home
+                                construction methods through seamless collaboration between
+                                homeowners, architects, contractors, and suppliers.
+                            </p>
+                        </section>
+                        <!-- Section: Text -->
+                    </div>
+                    <!-- Grid container -->
+
+                    <!-- Copyright -->
+                    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                        © 2020 Copyright:SBH , Design and Developed By:
+                        <a class="text-reset fw-bold" href="{% url 'me' %}">Akash Chauhan</a>
+                    </div>
+                    <!-- Copyright -->
+                </footer>
+            </div>
+        </div>
+        <!-- Footer -->
+    </div>
+
+
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

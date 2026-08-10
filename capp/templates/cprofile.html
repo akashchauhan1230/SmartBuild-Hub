@@ -1,0 +1,43 @@
+{% extends 'cbase.html' %}
+{% load static %}
+
+
+{% block contractor %}
+<div class="row p-5">
+    <div class="col-sm-2 text-center">
+        {% if profile %}
+        <div class="rounded-circle border border-2 mx-auto border-warning" style="height: 150px; width: 150px;">
+            <img src="{{ profile.url }}" alt="" class="rounded-circle h-100 w-100">
+        </div>
+        {% else %}
+        <div class="rounded-circle border border-2 mx-auto border-warning text-center" style="height: 150px; width: 150px;">
+            <i class="fa-solid fa-user-circle fa-8x mt-3"></i>
+        </div>
+        {% endif %}
+    </div>
+    <div class="col-sm-12 col-md-10 ps-5 pt-3">
+        <a href="{% url 'cedit' %}" class="nav-link mt-4 float-end"><i class="fa-regular fa-edit float-end fa-2x"></i></a>
+        <h2 class="text-warning mt-3">{{name}}</h2>
+        <h5><i class="fa-regular fa-envelope me-2"></i>{{email}}</h5>
+        <h6 class="text-secondary">{{bio}}</h6>
+        
+        
+    </div>
+    
+    
+</div>
+<div class="row">
+    <h2>Personal Information</h2>
+    <div class="col-sm-12 col-md-10 mx-auto">
+        <div class="card w-100 p-4  mt-3">
+            <h6><i class="fa-solid fa-phone me-3 my-3 text-warning"></i>{{contactno}} <span><i class="fa-solid fa-envelope ms-5 me-3 text-warning"></i>{{email}}</span></h6>
+            {% if bio %}
+            <h6><i class="fa-solid fa-address-card me-3 my-3 text-warning"></i>{{bio}}</h6>
+            {% endif %}
+            {% if address %}
+            <h6><i class="fa-solid fa-location-dot me-3 my-3 text-warning"></i>{{address}}</h6>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

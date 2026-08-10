@@ -1,0 +1,135 @@
+*{
+font-family:Georgia, 'Times New Roman', Times, serif;
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+}
+.bgc{
+    background-color:rgb(18 34 59 / 30%);
+    z-index: 1;
+}
+.bgcc{
+    background-color: #12223b;
+    color: white;
+}
+.txt-color{
+    color: #fdb603 !important;
+}
+.txt-blue{
+    color: #12223b;
+}
+.button-color{
+    background-color: #fdb603;
+    color: white;
+}
+.home{
+    min-height: 100vh !important;
+    background-image: url(../img/hero-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 0px;
+    z-index:-1 ;
+}
+.about, .contact{
+    height: 100vh;
+    background-image: url(../img/about-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    top: 0px;
+    z-index:-1 ;
+}
+.contact{
+    color: #12223b;
+}
+hr{
+    color:white;
+    size: 2px;
+}
+.hero{
+    min-height: 80vh;
+    background-color:rgb(18 34 59 /30%);
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 70px;
+    padding:0px 100px;
+}
+.hero1{
+    min-height: 70vh;
+    background-color:rgb(18 34 59 /40%);
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding:0px 100px;
+}
+.mycard{
+    height: 300px;
+    width: 250px;
+    transition: .3s ease;
+}
+.nav-link{
+    color: white !important;
+}
+.nav-link:hover{
+    color: #12223b !important;
+}
+.text-warning{
+    color: #fdb603 !important;
+}
+.ratecard{
+    height: 300px;
+    width: 300px;
+    margin-top: 20px;
+    transition: .7s ease;
+}
+@media(max-width:768px){
+   .hero{
+    font-size: 50px;
+    padding: 0px 30px;
+   }
+}
+@media(max-width:580px){
+   .hero{
+    font-size: 40px;
+     padding: 0px 30px;
+   }
+   .contact-image{
+    display: none;
+   }
+}
+@media(max-width:380px){
+   .hero{
+    font-size: 30px;
+     padding: 0px 30px;
+   }
+}
+.ratecard:hover{
+     border:2px solid #fdb603 !important;
+     transform: translateY(-20px) !important;
+}
+.mycard:hover{
+     border:2px solid #fdb603 !important;
+}
+.card-img-overlay{
+    transition: 1s ease;
+}
+.card-img-overlay:hover{
+    backdrop-filter: blur(5px) ;
+}
+.button-color:hover{
+    background-color: #f8be2d;
+    color: #12223b !important;
+}
+input:focus {
+  outline: none;
+}
+.blurs{
+    backdrop-filter: blur(5px);
+}
+.admin_login{
+    background-color:rgb(255 255 255 / 50%) !important;
+}

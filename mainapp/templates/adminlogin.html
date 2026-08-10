@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row  text-center">
+            <div class="col-sm-12 home">
+            </div>
+        </div>
+        <div class="row"  style="margin-top: 6%; ">
+            <div class="col-sm-4 mx-auto my-auto">
+                <!-- messages start -->
+                {% if messages %}
+                {% for m in messages %}
+                <div class="alert alert-success alert-dismissible fade show " role="alert">
+                    {{m}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                        aria-label="Close"></button>
+                </div>
+                {% endfor %}
+                {% endif %}
+                <!-- messages end -->
+                <div class="card  admin_login p-3 text-center rounded-4 " >
+                    <i class="fa-solid fa-user-circle fa-4x mx-auto my-3 "></i>
+                    <h4 class="fw-semibold">Welcome Admin</h4>
+                    <form method="post" class="mt-4">
+                        {% csrf_token%}
+                        <div class="form-floating mb-3 ">
+                            <input type="text" class="form-control" id="floatingInput"
+                                placeholder="Enter username" name="username">
+                            <label for="floatingInput">Username</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="floatingPassword"
+                                placeholder="Password" name="password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <button type="submit" class="btn button-color mt-4 w-50 fw-semibold">Login</button>
+                    </form>
+                    <p class="mt-5 ">&copy;Copyright:Smart Build Hub <a href="{% url 'index' %}"
+                            class="ms-5">Back to
+                            Home</a></p>
+                    <p> Designed & Developed By: <a href="{% url 'me' %}">Akash Chauhan</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+
+</body>
+
+</html>

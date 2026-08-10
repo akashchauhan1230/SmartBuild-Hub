@@ -1,0 +1,46 @@
+{% extends 'cbase.html' %}
+
+{% block contractor %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Progress Update for <span class="text-warning">{{project.projectname}}</span></h1>
+        <form method="post" enctype="multipart/form-data" class="w-75 mx-auto mt-4 p-4 shadow border border-warning rounded-3">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="ut" class="form-laber">Update Text</label>
+                <textarea name="update_text" id="ut" class="form-control"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="up" class="form-laber">Update Progress Percent</label>
+                <input type="number" name="progress_percent" value="{{project.progress}}" id="up" onchange="check()" class="form-control" required>
+                <span id="progress_alert" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="file" class="form-laber">Upload File</label>
+                <input type="file" name="image" id="file" class="form-control" required>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-warning w-50 mt-2">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function check(){
+        var old='{{project.progress}}'
+        var progress=document.getElementById('up').value;
+        var msg=document.getElementById('progress_alert')
+        if (progress<old){
+            msg.innerHTML='Progress cannot be less than previous progress';
+            document.getElementById('up').value=old;
+        }
+        else if(progress >100){
+            msg.innerHTML='Progress can not be greater than 100%';
+            document.getElementById('up').value=old;   
+        }
+        else{
+            msg.innerHTML='';
+        }
+    }
+</script>
+{% endblock %}

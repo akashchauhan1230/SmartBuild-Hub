@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block hero%}
+<div class="hero1 fw-semibold  text-center pb-3" >
+    <div class="row  pt-5 border rounded-4 mt-3 bg-white"  id="login" >
+    <div class="col-sm-12 col-md-6  px-5 text-center border-end border-2 text-dark order-1">
+        <h4 class="font txt-color">NEW MEMBER? REGISTER NOW</h4>
+        <h6 class="font mt-1">MEMBER BENEFITS</h6>
+        <div class="row px-5 ">
+            <div class="col-sm-6 p-2">
+                <img src="{% static 'img/j1.jpg' %}" alt="" class="w-100">
+                <p>Exclusive Member Rates</p>
+            </div>
+            <div class="col-sm-6 p-2">
+                <img src="{% static 'img/j2.jpg' %}" alt="" class="w-100">
+                <p>Special Offers for Building House</p>
+            </div>
+            <div class="col-sm-6 p-2">
+                <img src="{% static 'img/j3.jpg' %}" alt="" class="w-100">
+                <p>Minimum 4% SBHCoins</p>
+            </div>
+            <div class="col-sm-6 p-2">
+                <img src="{% static 'img/j4.jpg' %}" alt="" class="w-100">
+                <p>Earn & Redeem across House, Shop and more</p>
+            </div>
+        </div>
+        <button style="background-color: #fdb603; border:none;"
+            class="px-3 text-light fw-semibold py-2 "><a href="{% url 'signup' %}"
+                class="nav-link">REGISTER NOW</a></button>
+    </div>
+    <div class="col-sm-12 col-md-6 p-2  ps-4 text-center order-2">
+        <!-- messages start -->
+        {% if messages %}
+        {% for m in messages %}
+        <div class="alert alert-success alert-dismissible fade show " role="alert">
+            {{m}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <!-- messages end -->
+        <h4 class="font txt-color">ALREADY A MEMBER? LOGIN</h4>
+        <p >Enter Your Login Credentials</p>
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="login">
+            <div class="name border-bottom w-100 mx-auto text-start ps-3 mt-3">
+                <select name="usertype" class="bg-transparent" id="cc" style="border: none; outline: none; width: 80%;">
+                    <option value="homeowner"><i class="fa-solid fa-house txt-color"></i>Home
+                        Owner</option>
+                    <option value="contractor"><i
+                            class="fa-solid fa-user-tie txt-color"></i>Contractor
+                    </option>
+
+                </select>
+            </div>
+            <div class="name border-bottom w-100 mx-auto text-start ps-3 mt-3">
+                <i class="fa-solid fa-envelope txt-color me-2"></i>
+                <input type="email" class="bg-transparent" name="email" id="email" style="border: none; width: 80%;"
+                    placeholder="Enter your Email Id">
+            </div>
+            <div class="name border-bottom border-2 w-100 mx-auto text-start ps-3 mt-3">
+                <i class="fa-solid fa-lock txt-color me-2"></i> <input type="password"
+                    name="password" id="password" class="bg-transparent" style="border: none; width: 80%;"
+                    placeholder="Enter your Password">
+            </div>
+            <div class="check mt-4">
+                <input type="checkbox" class="me-2 bg-transparent" required><span class="text-dark">By continuing
+                    you
+                    agree to our Terms of Use and Privacy Policy.</span>
+            </div>
+            
+            <a href="{% url 'forgetpassword' %}" class="float-end">Forget Password?</a>
+            <button style="background-color: #fdb603; border:none;"
+                class="px-3 text-light mx-auto fw-semibold py-2 mt-5" type="submit">LOGIN NOW</button>
+        </form>
+        <div class="logo my-5">
+            <i class="fa-brands fa-google txt-color fa-2x mx-3"></i>
+            <i class="fa-brands fa-facebook-f txt-color fa-2x mx-3"></i>
+            <i class="fa-brands fa-linkedin-in txt-color fa-2x mx-3"></i>
+            <i class="fa-brands fa-instagram txt-color fa-2x mx-3"></i>
+            <i class="fa-brands fa-github txt-color fa-2x mx-3"></i>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block main %}
+<div class="row  text-center">
+    <div class="col-sm-12 home">
+    </div>
+</div>
+
+
+{% endblock %}

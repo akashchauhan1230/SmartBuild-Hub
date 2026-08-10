@@ -1,0 +1,45 @@
+{% extends 'adminbase.html'%}
+
+{% block admin %}
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Manage homeowners</h2>
+        <table class="table table-stripped">
+            <tr>
+                <th>Sr. No</th>
+                <th>Profile</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Contact No</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+            {% for h,l in combined %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>
+                    {% if h.picture %}
+                    <img src="{{h.picture.url}}" alt="" height="50px" width="50px" class="rounded-circle">
+                    {% else %}
+                    No Profile
+                    {% endif %}
+                </td>
+                <td>{{h.name}}</td>
+                <td>{{h.email}}</td>
+                <td>{{h.password}}</td>
+                <td>{{h.contact_no}}</td>
+                <td>{{h.address}}</td>
+                <td>
+                    {% if l.status == 'active'  %}
+                    <a href="{% url 'block' id=l.id %}" class="btn btn-danger">Block</a>
+                    {% else %}
+                    <a href="{% url 'unblock' id=l.id %}" class="btn btn-success">Unblock</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

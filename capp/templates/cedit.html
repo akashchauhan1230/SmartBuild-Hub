@@ -1,0 +1,38 @@
+{% extends 'cbase.html' %}
+{% load static %}
+
+{% block contractor %}
+<div class="row px-5 py-3">
+    <div class="col-sm-12  text-center">
+        <h1 class="text-warning">Edit Your Profile</h1>
+        <form method="post" enctype="multipart/form-data" class="form-data fs-5 text-start row g-3">
+            {% csrf_token %}
+            <div class="col-sm-12 col-md-6">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="name" value="{{name}}" required>    
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <label for="contact" class="form-label">Contact No</label>
+                <input type="text" class="form-control" name="contactno" id="contact" value="{{contactno}}" required>    
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" id="email" value="{{email}}" disabled>    
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <label for="profile" class="form-label">Choose profile picture</label>
+                <input type="file" class="form-control" name="profile" id="profile"  >    
+            </div>
+            <div class="col-sm-12 col-md-12">
+                <label for="address" class="form-label">Enter full address</label>
+                <textarea name="address" id="address" class="form-control" >{{address}}</textarea>
+            </div>
+            <div class="col-sm-12 col-md-12">
+                <label for="bio" class="form-label">Bio</label>
+                <textarea name="bio" id="bio" class="form-control" >{{bio}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-warning py-2 fw-semibold w-50 mt-5 mx-auto">Update Profile</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

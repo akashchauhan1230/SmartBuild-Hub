@@ -1,0 +1,37 @@
+{% extends 'hbase.html' %}
+{% load static %}
+
+{% block Homeowner %}
+<div class="row">
+    <h1>Homeowner Dashboard</h1>
+    <div class="col-sm-6 col-md-6 col-lg-3 px-3">
+        <div
+            class="mycard shadow-lg border-bottom border-3 border-warning p-3 w-75 text-center rounded-3">
+            <h2 class="text-warning ">{{project}}</h2>
+            <h5>Total Project</h5>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-3 px-3">
+        <div
+            class="mycard shadow-lg border-bottom w-75 text-center border-3 border-warning p-3 text-center rounded-3">
+            <h2 class="text-warning">{{cproject}}</h2>
+            <h5>Projct completed</h5>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-3 px-3">
+        <div
+            class="mycard shadow-lg border-bottom w-75 text-center border-3 border-warning p-3 text-center rounded-3">
+            <h2 class="text-warning">{{aproject}}</h2>
+            <h5>Project ongoing</h5>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-3 px-3">
+        <div
+            class="mycard shadow-lg border-bottom w-75 text-center border-3 border-warning p-3 text-center rounded-3">
+            <h2 class="text-warning">{{pendingp}}</h2>
+            <h5>Project Pending</h5>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

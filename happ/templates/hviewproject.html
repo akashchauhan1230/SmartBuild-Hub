@@ -1,0 +1,58 @@
+{% extends 'hbase.html' %}
+{% block Homeowner%}
+<div class="row">
+    <div class="col-sm-12">
+        <h1>VIEW PROJECT</h1>
+        <div class="table-responsive">
+            <table class="table text-center">
+                <tr>
+                    <th>S.No</th>
+                    <th>Project Name</th>
+                    <th>Duration(in days)</th>
+                    <th>Budget(in rupees)</th>
+                    <th>Location</th>
+                    <th>Progress(in %)</th>
+                    <th>Status</th>
+                    <th>Plot Size</th>
+                    <th>House Type</th>
+                    <th>No. of Floors</th>
+                    <th>Basement</th>
+                    <th>Parking Required</th>
+                    <th>Bedroom</th>
+                    <th>Bathroom</th>
+                    <th>Kitchen on Each Floors</th>
+                    <th>Additonal Rooms</th>
+                    <th>Outdore Areas</th>
+                    <th>Design Reference</th>
+                    <th>Action</th>
+                </tr>
+                {% for p in project %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{p.projectname}}</td>
+                    <td>{{p.duration}}</td>
+                    <td>{{p.budget}}</td>
+                    <td>{{p.location}}</td>
+                    <td>{{p.progres}}</td>
+                    <td>{{p.status}}</td>
+                    <td>{{p.plot_size}}</td>
+                    <td>{{p.house_type}}</td>
+                    <td>{{p.num_floors}}</td>
+                    <td>{{p.basement}}</td>
+                    <td>{{p.parking_required}}</td>
+                    <td>{{p.bedrooms}}</td>
+                    <td>{{p.bathrooms}}</td>
+                    <td>{{p.kitchen_each_floor}}</td>
+                    <td>{{p.additional_rooms}}</td>
+                    <td>{{p.outdoor_areas}}</td>
+                    <td><a href="{{p.design_reference}}" target="_blank">View Design Reference</a></td>
+                    <td>
+                        <a href="{% url 'hviewapplications' id=p.id %}" class="btn btn-warning">View contractor application</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

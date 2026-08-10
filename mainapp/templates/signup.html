@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block hero%}
+<div class="hero1 fw-semibold  text-center pb-3" >
+    <div class="row bg-white pt-5 border rounded-4 mt-3" id="signup" >
+        <div class="col-sm-12 col-md-7 p-3 text-center mx-auto">
+            <!-- messages start -->
+            {% if messages %}
+            {% for m in messages %}
+            <div class="alert alert-danger alert-dismissible fade show " role="alert">
+                {{m}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                    aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <!-- messages end -->
+            <h4 class="font text-dark fw-semibold">Welcome to Smart Build Hub </h4>
+            <p style="color: #fdb603;">Enter Your Details to Connect with Us</p>
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="form_type" value="signup">
+                <div class="name border-bottom w-100 mx-auto text-start ps-3 mt-3">
+                    <select name="usertype" id="cc" style="border: none; width: 100%;">
+                        <option value="homeowner"><i class="fa-solid fa-house txt-color"></i>Home
+                            Owner</option>
+                        <option value="contractor"><i
+                                class="fa-solid fa-user-tie txt-color"></i>Contractor
+                        </option>
+                    </select>
+                </div>
+                <div class="name border-bottom w-100 mx-auto text-start ps-3 mt-3">
+                    <i class="fa-solid fa-user txt-color me-2"></i> <input type="text"
+                        name="username" id="name" style="border: none; width: 80%;"
+                        placeholder="Enter your Full Name" required>
+                </div>
+                <div class="name border-bottom w-100 mx-auto text-start ps-3 mt-3">
+                    <i class="fa-solid fa-phone txt-color me-2"></i><input type="tel" maxlength="10"
+                        name="contactno" id="" style="border: none; width: 80%;"
+                        placeholder="Enter your Mobile number" required>
+                </div>
+                <div class="name border-bottom w-100 mx-auto text-start ps-3 mt-3">
+                    <i class="fa-solid fa-envelope txt-color me-2"></i><input type="email"
+                        name="email" id="" style="border: none; width: 80%;"
+                        placeholder="Enter your Email id" required>
+                </div>
+                <div class="name border-bottom border-2 w-100 mx-auto text-start ps-3 mt-3">
+                    <i class="fa-solid fa-lock txt-color me-2"></i><input type="password"
+                        name="password" id="" style="border: none; width: 80%;"
+                        placeholder="Enter your Password" required>
+                </div>
+                <div class="check mt-4">
+                    <input type="checkbox" class="me-2" required><span>By
+                        continuing you
+                        agree to our Terms of Use and Privacy Policy.</span>
+                </div>
+
+                <button style="background-color: #fdb603; border:none;"
+                    class="px-3 text-light fw-semibold py-2 mt-5" type="submit">JOIN NOW</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block title %}
+Sign up
+{% endblock %}
+
+{% block main %}
+<div class="row  text-center">
+    <div class="col-sm-12 home">
+    </div>
+</div>
+
+
+{% endblock %}
