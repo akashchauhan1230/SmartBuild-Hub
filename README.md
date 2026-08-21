@@ -1,212 +1,155 @@
 # 🏗️ SmartBuild Hub
 
-> **Revolutionising Building Construction**
+SmartBuild Hub is a **Django-based construction management platform** that connects clients with contractors. Clients can create construction projects, contractors can submit bids, and clients can compare bids and select the most suitable contractor.
 
-SmartBuild Hub is an innovative digital platform designed to transform traditional home construction methods. The platform streamlines the construction process by connecting **homeowners, contractors, and administrators** through a centralized project management system.
+## 🌐 Live Demo
 
-It provides tools for project creation, contractor proposals, task management, real-time updates, communication, and project monitoring.
+🚀 **[Visit SmartBuild Hub Live Demo](smart-build-alm0wu1sd-none-69d9.vercel.app)**
 
----
+> Replace `YOUR-SMARTBUILD-HUB-VERCEL-URL` with your actual Vercel deployment URL.
 
-## 📌 About the Project
+## ✨ Features
 
-Traditional construction processes can involve difficulties in communication, project tracking, coordination, and managing multiple stakeholders.
+* 👤 Client registration and login
+* 👷 Contractor registration and login
+* 🏠 Create and manage construction projects
+* 📋 Contractors can view available projects
+* 💰 Contractor bidding system
+* 🤝 Compare contractor bids
+* ✅ Select a contractor
+* 📊 Track project progress
+* 📈 Client and contractor dashboards
+* 🔐 Authentication and authorization
+* 🛠️ Django Admin panel
+* 📱 Responsive Bootstrap design
 
-**SmartBuild Hub** provides a digital solution that helps homeowners and contractors collaborate efficiently throughout the construction lifecycle.
-
-The platform is designed around three primary entities:
-
-* 🏠 **Homeowner** — Creates projects, tracks progress, and communicates with contractors.
-* 👷 **Contractor** — Submits proposals, manages tasks, and provides real-time project updates.
-* 🛡️ **Admin** — Monitors users and oversees platform operations.
-
----
-
-## ✨ Key Features
-
-### 🏠 Homeowner
-
-* Create and manage construction projects
-* View contractor proposals
-* Track project progress
-* Communicate with contractors
-* Monitor project activities
-
-### 👷 Contractor
-
-* View available projects
-* Submit project proposals
-* Manage assigned tasks
-* Provide real-time updates
-* Collaborate with homeowners
-
-### 🛡️ Admin
-
-* Monitor platform operations
-* Manage and monitor users
-* Oversee projects and activities
-
----
-
-## 🚀 Smart Features
-
-* 📊 **Project Dashboard**
-* 🤝 **Team Collaboration**
-* 🔄 **Real-Time Updates**
-* 💬 **Transparent Communication**
-* 📋 **Project & Task Management**
-* 👥 **Multi-Role Platform**
-
-These features help create a more organized and transparent construction workflow.
-
----
-
-## 🔄 Project Workflow
+## 🔄 How It Works
 
 ```text
-                    ┌─────────────────┐
-                    │    Homeowner    │
-                    └────────┬────────┘
-                             │
-                       Create Project
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │     Project     │
-                    └────────┬────────┘
-                             │
-                   Contractors Submit
-                        Proposals
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │    Contractor   │
-                    └────────┬────────┘
-                             │
-                      Manage Tasks
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │ Project Updates │
-                    └────────┬────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │    Homeowner    │
-                    │ Track Progress  │
-                    └─────────────────┘
-
-                         ▲
-                         │
-                    ┌────┴─────┐
-                    │   Admin  │
-                    │ Monitoring│
-                    └──────────┘
+Client
+  ↓
+Register / Login
+  ↓
+Create Construction Project
+  ↓
+Contractors View Project
+  ↓
+Contractors Submit Bids
+  ↓
+Client Compares Bids
+  ↓
+Client Selects Contractor
+  ↓
+Project Starts
+  ↓
+Contractor Updates Progress
+  ↓
+Client Tracks Progress
 ```
 
----
+## 🛠️ Tech Stack
 
-## 🛠️ Technology Stack
-
-### Frontend
+**Frontend**
 
 * HTML5
 * CSS3
 * JavaScript
-* Bootstrap
+* Bootstrap 5
+* Bootstrap Icons
+* AOS
 
-### Backend
+**Backend**
 
 * Python
-* Django Framework
-* MVT Architecture
+* Django
 
-### Database
+**Database**
 
-* SQLite3
+* SQLite
+* SQL
 
-The project presentation specifies HTML5, CSS3, JavaScript, and Bootstrap for the frontend, Python/Django with MVT architecture for the backend, and SQLite3 for data storage.
+**Tools**
 
----
+* VS Code
+* Git
+* GitHub
+* Vercel
 
-## 🏛️ Architecture
+## 👥 User Roles
 
-SmartBuild Hub follows the **Django MVT (Model-View-Template)** architecture.
+### 👤 Client
 
-```text
-            User
-              │
-              ▼
-        ┌────────────┐
-        │   Django   │
-        │   Views    │
-        └─────┬──────┘
-              │
-       ┌──────┴──────┐
-       ▼             ▼
-    Template       Model
-       │             │
-       │             ▼
-       │          SQLite3
-       │
-       ▼
-   User Interface
-```
+* Register and log in
+* Create construction projects
+* View contractor bids
+* Compare prices
+* Select contractors
+* Track project progress
 
----
+### 👷 Contractor
 
-## 📂 Suggested Project Structure
+* Register and log in
+* View available projects
+* Submit project bids
+* Manage assigned projects
+* Update project progress
+
+### 👨‍💼 Super Admin
+
+* Manage users
+* Manage contractors
+* Manage projects
+* Monitor platform activities
+* Manage application data through Django Admin
+
+## 📂 Project Structure
 
 ```text
 SmartBuild-Hub/
 │
 ├── manage.py
-├── db.sqlite3
+├── requirements.txt
+├── vercel.json
 │
 ├── smartbuild/
 │   ├── settings.py
 │   ├── urls.py
 │   ├── wsgi.py
-│   └── asgi.py
+│   └── ...
 │
-├── app/
-│   ├── migrations/
-│   ├── templates/
-│   ├── static/
+├── core/
 │   ├── models.py
 │   ├── views.py
 │   ├── urls.py
-│   └── admin.py
+│   └── ...
 │
-├── requirements.txt
+├── templates/
+│   └── ...
+│
+├── static/
+│   ├── css/
+│   ├── js/
+│   └── img/
+│
 └── README.md
 ```
 
-> Adjust the folder names according to your actual Django project structure.
+## ⚙️ Installation
 
----
-
-## ⚙️ Installation & Setup
-
-### 1. Clone the Repository
+### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/SmartBuild-Hub.git
-```
-
-### 2. Navigate to the Project
-
-```bash
+git clone https://github.com/akashchauhan1230/SmartBuild-Hub.git
 cd SmartBuild-Hub
 ```
 
-### 3. Create a Virtual Environment
+### Create Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-### 4. Activate the Virtual Environment
+### Activate Virtual Environment
 
 **Windows:**
 
@@ -214,25 +157,32 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-**Linux / macOS:**
+**Linux/macOS:**
 
 ```bash
 source venv/bin/activate
 ```
 
-### 5. Install Dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 6. Apply Migrations
+### Apply Migrations
 
 ```bash
+python manage.py makemigrations
 python manage.py migrate
 ```
 
-### 7. Run the Development Server
+### Create Superuser
+
+```bash
+python manage.py createsuperuser
+```
+
+### Run the Project
 
 ```bash
 python manage.py runserver
@@ -244,50 +194,37 @@ Open:
 http://127.0.0.1:8000/
 ```
 
----
+## 🚀 Deployment
 
-## 🎯 Objectives
+The project can be deployed using **Vercel** with the required Django configuration, `requirements.txt`, and `vercel.json`.
 
-* Digitize the traditional construction workflow
-* Improve communication between homeowners and contractors
-* Make project progress easier to track
-* Provide centralized project and task management
-* Improve transparency throughout construction projects
-* Simplify collaboration between construction stakeholders
+## 🔮 Future Enhancements
 
----
+* 💳 Online payment integration
+* 🔔 Real-time notifications
+* 💬 Client-contractor chat
+* ⭐ Contractor ratings and reviews
+* 📧 Email notifications
+* 🗺️ Google Maps integration
+* 📄 Project document management
+* 📊 Advanced analytics
 
-## 🔮 Future Scope
+## 🎯 Project Objective
 
-The project presentation identifies several potential future enhancements:
+The main objective of SmartBuild Hub is to **simplify construction project management by providing a centralized platform where clients can find contractors, receive competitive bids, select contractors, and monitor project progress.**
 
-* 🤖 **Predictive AI**
-* 🌐 **Advanced IoT Automation**
-* 🔗 **Blockchain for Transparency**
-* 🏗️ **Multiple Construction Services**
+## 👨‍💻 Developer
 
-These technologies could further improve automation, transparency, monitoring, and decision-making within the platform.
+**Akash Chauhan**
 
----
+* GitHub: https://github.com/akashchauhan1230
+* LinkedIn: https://www.linkedin.com/in/akash-chauhan-762319357/
 
-## 👨‍💻 Team
+## 📄 License
 
-**SmartBuild Hub** was presented by:
-
-* **Virendra Sharma**
-* **Akash Chauhan**
-* **Vishwajeet Gupta**
-
-**Rameshwaram Institute of Technology and Management (RITM), Lucknow**.
+This project was developed for **educational and portfolio purposes**.
 
 ---
 
-## 📜 License
+⭐ **If you like this project, consider giving the repository a star!**
 
-This project is developed for **educational and academic purposes**.
-
----
-
-## ⭐ Support
-
-If you find this project useful, consider giving the repository a ⭐ on GitHub.
