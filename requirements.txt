@@ -5,3 +5,4 @@ pillow==12.1.1
 pipreqs==0.4.13
 stripe==12.4.0
 virtualenv==21.7.4
+whitenoise>=6.0.0
