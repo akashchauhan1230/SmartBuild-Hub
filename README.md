@@ -4,7 +4,7 @@ SmartBuild Hub is a **Django-based construction management platform** that conne
 
 ## 🌐 Live Demo
 
-🚀 **[Visit SmartBuild Hub Live Demo](smart-build-hub-navy.vercel.app)**
+🚀 **[Visit SmartBuild Hub Live Demo](https//smart-build-hub-navy.vercel.app)**
 
 
 
